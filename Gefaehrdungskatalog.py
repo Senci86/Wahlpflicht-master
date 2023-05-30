@@ -64,7 +64,7 @@ def search_excel(start_index, var_page):
     # Ersetzen der HTML-Tags für die Tabelle (Spaltennamen), um die erste Zeile grau zu färben
     table_html = table_html.replace("<thead>", "<thead style='background-color: #808080; color: white;'>", 1)
     # Ersetzen der HTML-Tags für die Tabelle, um die zweite Zeile hellgrau zu färben
-    table_html = table_html.replace("<tr>", "<tr style='background-color: #f2f2f2;'>", 1)
+    table_html = table_html.replace("<tr>", "<tr style='background-color: #A9A9A9;'>", 1)
 
     # Ausgabe der Tabelle in Streamlit
     st.write(table_html, unsafe_allow_html=True)
@@ -92,6 +92,7 @@ def sidebar(var_page, first_row, bedrohung_list, list_number, info):
 
         # Blocksatz
         st.markdown(f"<p style='text-align: justify'>{info}</p>", unsafe_allow_html=True)
+
 
 if __name__ == '__main__':
     # Setzen Sie den Streamlit-Breitbildmodus
