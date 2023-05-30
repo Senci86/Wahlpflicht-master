@@ -10,4 +10,3 @@ first_row, selected_columns, df, bedrohung_list, list_number = gf.read_excel(var
 
 # Sidebar Funktion, aufruf von entsprechenden Radiobuttons
 gf.sidebar(var_page, first_row, bedrohung_list, list_number, text)
-
