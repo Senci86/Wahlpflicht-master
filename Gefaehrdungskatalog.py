@@ -62,9 +62,9 @@ def search_excel(start_index, var_page):
                                                      formatters={"Verfeinerungsstufe": "<b>{}</b>".format})
 
     # Ersetzen der HTML-Tags für die Tabelle (Spaltennamen), um die erste Zeile grau zu färben
-    table_html = table_html.replace("<thead>", "<thead style='background-color: #A9A9A9; color: white;'>", 1)
+    table_html = table_html.replace("<thead>", "<thead style='background-color: #808080; color: white;'>", 1)
     # Ersetzen der HTML-Tags für die Tabelle, um die zweite Zeile hellgrau zu färben
-    table_html = table_html.replace("<tr>", "<tr style='background-color: #808080;'>", 1)
+    table_html = table_html.replace("<tr>", "<tr style='background-color: #A9A9A9;'>", 1)
 
     # Ausgabe der Tabelle in Streamlit
     st.write(table_html, unsafe_allow_html=True)
