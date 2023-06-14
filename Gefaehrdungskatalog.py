@@ -92,6 +92,7 @@ def sidebar(var_page, first_row, bedrohung_list, list_number, info):
         # Blocksatz
         st.markdown(f"<p style='text-align: justify'>{info}</p>", unsafe_allow_html=True)
 
+
 def main():
     # Anzeige des Titels und des Startbildschirms
     st.title(read_json("Titel"))
@@ -107,9 +108,7 @@ def main():
     st.markdown(read_json("Link_BSI"))
 
 
-
 if __name__ == '__main__':
     # Setzen Sie den Streamlit-Breitbildmodus
     st.set_page_config(layout="wide")
     main()
-
