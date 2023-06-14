@@ -89,16 +89,21 @@ def sidebar(var_page, first_row, bedrohung_list, list_number, info):
         search_excel(page, var_page)
     else:
         st.title(var_page)
-
         # Blocksatz
         st.markdown(f"<p style='text-align: justify'>{info}</p>", unsafe_allow_html=True)
-
 
 def main():
     # Anzeige des Titels und des Startbildschirms
     st.title(read_json("Titel"))
+    # Lese den Inhalt einer JSON-Datei namens "Startbildschirm" und speichere ihn in der Variablen 'text'
     text = read_json("Startbildschirm")
+
+    # Zeige den Inhalt der Variablen 'text' auf der Webseite an.
+    # Der Inhalt wird in einem <p>-HTML-Tag dargestellt, wobei der Text im Blocksatz ausgerichtet ist.
+    # 'unsafe_allow_html=True' erlaubt die Verwendung von rohem HTML innerhalb des Markdowns.
     st.markdown(f"<p style='text-align: justify'>{text}</p>", unsafe_allow_html=True)
+
+    # Hyperlink zum BSI (Bundesamt für Sicherheit in der Informationstechnik)
     st.markdown(read_json("Link_BSI"))
 
 
@@ -106,5 +111,5 @@ def main():
 if __name__ == '__main__':
     # Setzen Sie den Streamlit-Breitbildmodus
     st.set_page_config(layout="wide")
-    # Aufruf der main-Funktion
     main()
+

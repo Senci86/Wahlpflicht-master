@@ -5,8 +5,17 @@ import pandas as pd
 import run
 
 
+
+
 class TestApp(unittest.TestCase):
 
+    def test_main(self):
+
+        # Überprüfen, ob die main Funktion ohne Fehler aufgerufen wird
+        try:
+            gf.main()
+        except Exception as e:
+            self.fail(f"main function raised an exception: {e}")
     @patch('subprocess.run')
     def test_run_streamlit(self, mock_subprocess_run):
         # Mocken des Verhaltens von subprocess.run
@@ -18,13 +27,6 @@ class TestApp(unittest.TestCase):
         # Überprüfen, ob subprocess.run mit den erwarteten Argumenten aufgerufen wurde
         mock_subprocess_run.assert_called_once_with(["streamlit", "run", "Gefaehrdungskatalog.py"], shell=True)
 
-    def test_main(self):
-
-        # Überprüfen, ob die main Funktion ohne Fehler aufgerufen wird
-        try:
-            gf.main()
-        except Exception as e:
-            self.fail(f"main function raised an exception: {e}")
 
     @patch('Gefaehrdungskatalog.pd.read_excel')
     def test_read_excelsheet(self, mock_read_excel):
